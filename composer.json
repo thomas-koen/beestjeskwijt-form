@@ -1,0 +1,16 @@
+{
+    "name": "tycoonmedia/beestjeskwijt-form",
+    "description": "Affiliate formulier voor Beestjeskwijt",
+    "type": "project",
+    "license": "GNU General Public License",
+    "authors": [
+        {
+            "name": "Koen",
+            "email": "koen@tycoonmedia.nl"
+        }
+    ],
+    "autoload": {
+      "psr-4": {"Beestjeskwijt\\": "src/"}
+    },
+    "require": {}
+}
