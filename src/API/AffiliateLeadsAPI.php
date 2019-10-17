@@ -15,11 +15,11 @@ class AffiliateLeadsAPI {
 	public function __construct() {
 		$this->required_fields = [
 			'url' => [
-				'challenge' => function($url){ return wp_http_validate_url($url); },
-				'sanitize'  => function($url){ return esc_url($url); }
+				'challenge' => function($url){ return $url; },
+				'sanitize'  => function($url){ return sanitize_text_field($url); }
 			],
 			'zipcode' => [
-				'challenge' => function($postcode){ return preg_match('/^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i', $postcode, $matches, PREG_OFFSET_CAPTURE, 0); },
+				'challenge' => function($postcode){ return preg_match('/^[0-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i', $postcode, $matches, PREG_OFFSET_CAPTURE, 0); },
 				'sanitize'  => function($postcode){ return sanitize_text_field($postcode); }
 			],
 			'email' => [
@@ -81,8 +81,9 @@ class AffiliateLeadsAPI {
 
 	public function validate_fields(array $fields){
 		foreach($this->required_fields as $field => $callables){
-			if(!in_array($field, $fields)){
-				throw new InvalidArgumentException(sprintf(__('The required %s field is missing', Plugin::DOMAIN), $field));
+
+			if(!array_key_exists($field, $fields)){
+				throw new InvalidArgumentException(sprintf(__('Het %s veld ontbreekt', Plugin::DOMAIN), $field));
 			}
 
 			if(is_callable($callables['sanitize'])){
@@ -92,7 +93,7 @@ class AffiliateLeadsAPI {
 			}
 
 			if(is_callable($callables['challenge']) && !$callables['challenge']($fields[$field])){
-				throw new InvalidArgumentException(sprintf(__('The required %s field contains an invalid value', Plugin::DOMAIN), $field));
+				throw new InvalidArgumentException(sprintf(__('Het verplichte veld %s bevat een ongeldige waarde', Plugin::DOMAIN), $field));
 			}
 		}
 		return $fields;
@@ -104,7 +105,7 @@ class AffiliateLeadsAPI {
 			'body'  => $fields
 		]);
 		if(is_wp_error($response)){
-			throw new UnexpectedValueException(sprintf(__('Something went wrong while submitting the form: %s', Plugin::DOMAIN), $response->get_error_message()));
+			throw new UnexpectedValueException(sprintf(__('Er ging iets fout bij het verzenden van het formulier: %s', Plugin::DOMAIN), $response->get_error_message()));
 		}
 		return $this->handle_response($response);
 	}
@@ -113,7 +114,7 @@ class AffiliateLeadsAPI {
 		$http_code = $response['response']['code'];
 		if($http_code != 201){
 			$body = sanitize_text_field($response['body']);
-			throw new UnexpectedValueException(sprintf(__('Something went wrong while submitting the form: %s', Plugin::DOMAIN), $body));
+			throw new UnexpectedValueException(sprintf(__('Onverwacht antwoord: %s', Plugin::DOMAIN), $body));
 		}
 		return true;
 	}

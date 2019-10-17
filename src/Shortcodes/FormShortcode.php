@@ -20,14 +20,17 @@ class FormShortcode {
 
 
 	public function generate($attributes){
-		if(!isset($attributes['thankyoupage']) || !wp_http_validate_url($attributes['thankyoupage'])){
-			return '<!-- Invalid thankyou page supplied -->';
+		if(!isset($attributes['affiliateurl'])){
+			return '<!-- Invalid affiliateurl supplied -->';
 		}
 
 		$template_path = $this->get_template_path();
 		if (!is_readable($template_path)) {
 			return sprintf('<!-- Could not read "%s" file -->', $template_path);
 		}
+
+		wp_enqueue_script("bk_script");
+
 		ob_start();
 		include $template_path;
 		return ob_get_clean();

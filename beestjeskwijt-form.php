@@ -17,4 +17,6 @@ namespace Beestjeskwijt;
 // Your code starts here.
 require_once __DIR__. '/vendor/autoload.php';
 
-$container = new Plugin();
+$beestjeskwijt_plugin = new Plugin(__FILE__);
+
+add_action('after_setup_theme', [$beestjeskwijt_plugin, 'init']);

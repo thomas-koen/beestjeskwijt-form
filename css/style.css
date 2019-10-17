@@ -1,0 +1,48 @@
+.bk_notice{
+	padding:20px;
+	color:#fff;
+	border-radius:5px;
+	margin-bottom:20px;
+	font-weight:bold;
+	background-color: #039BE5;
+	width:100%;
+}
+.bk_form_error{
+	background-color:#B71C1C;
+}
+
+.bk_form_success{
+	background-color: #43A047;
+}
+
+.bk_label_text{
+	display:block;
+	margin-bottom:5px;
+}
+
+.bk_required{
+	color:#B71C1C;
+}
+
+.bk_form_input{
+	width:100%;
+	margin-bottom:20px;
+	border-radius:5px;
+	padding:10px;
+	border:1px solid grey;
+	background-color:#fff;
+}
+
+#bk_form_zipcode, #bk_form_house_number{
+	width:50%
+}
+
+#bk_form_submit {
+	color:#fff;
+	background-color:#0091CF;
+}
+#bk_form_submit:hover{
+	background-color: #0076A9;
+	text-transform:uppercase;
+	font-weight:bold;
+}
