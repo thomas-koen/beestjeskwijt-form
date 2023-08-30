@@ -6,7 +6,6 @@ namespace Beestjeskwijt;
 
 use Beestjeskwijt\API\AffiliateLeadsAPI;
 use Beestjeskwijt\Shortcodes\FormShortcode;
-use Beestjeskwijt\Subscriber\FormSubmissionSubscriber;
 use Beestjeskwijt\Subscriber\RESTSubscriber;
 
 class Plugin {
