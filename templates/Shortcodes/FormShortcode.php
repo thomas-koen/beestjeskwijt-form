@@ -7,7 +7,7 @@
 	<form class="bk_form">
 		<input type="hidden" name="url" value="<?php echo $attributes['affiliateurl']; ?>" />
 		<input type="hidden" name="type_contact" value="<?php echo isset($attributes['type_contact']) ? sanitize_text_field($attributes['type_contact']) : 'particulier' ?>" />
-		<label for="bk_form_service_id"><span class="bk_label_text"><?php esc_html_e("Van welk ongedierte heb je last?", 'beestjeskwijt-form'); ?><span class="bk_required">*</span></span></span>
+		<label for="bk_form_service_id"><span class="bk_label_text"><?php esc_html_e("Van welk ongedierte heb je last?", 'beestjeskwijt-form'); ?><span class="bk_required">*</span></span>
 			<select class="bk_form_input bk_form_select" id="bk_form_service_id" name="service_id">
 				<option value="1"><?php esc_html_e('Bedwantsen', 'beestjeskwijt-form'); ?></option>
 				<option value="26" selected="selected"><?php esc_html_e('Beestjes onbekend / niet in de lijst', 'beestjeskwijt-form'); ?></option>
