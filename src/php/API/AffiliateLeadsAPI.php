@@ -3,12 +3,13 @@
 
 namespace Beestjeskwijt\API;
 
-use Beestjeskwijt\Plugin;
+use Beestjeskwijt\Exceptions\InvalidFormValueException;
 use InvalidArgumentException;
 use UnexpectedValueException;
 
 class AffiliateLeadsAPI {
 	const API_URL = "https://beestjeskwijt.nl/api/lead";
+//	const API_URL = "https://eo9j2cyyobywmu8.m.pipedream.net";
 
 	private $required_fields = [];
 
@@ -79,11 +80,14 @@ class AffiliateLeadsAPI {
 		return true;
 	}
 
+	/**
+	 * @throws InvalidFormValueException
+	 */
 	public function validate_fields(array $fields){
 		foreach($this->required_fields as $field => $callables){
 
 			if(!array_key_exists($field, $fields)){
-				throw new InvalidArgumentException(sprintf(__('Het %s veld ontbreekt', Plugin::DOMAIN), $field));
+				throw new InvalidFormValueException($field, sprintf(__('Het %s veld ontbreekt',  'beestjeskwijt-form'), $field));
 			}
 
 			if(is_callable($callables['sanitize'])){
@@ -93,19 +97,22 @@ class AffiliateLeadsAPI {
 			}
 
 			if(is_callable($callables['challenge']) && !$callables['challenge']($fields[$field])){
-				throw new InvalidArgumentException(sprintf(__('Het verplichte veld %s bevat een ongeldige waarde', Plugin::DOMAIN), $field));
+				throw new InvalidFormValueException($field, sprintf(__('Het verplichte veld %s bevat een ongeldige waarde', 'beestjeskwijt-form'), $field));
 			}
 		}
 		return $fields;
 	}
 
+	/**
+	 * @throws InvalidFormValueException
+	 */
 	public function submit(array $fields){
 		$fields = $this->validate_fields($fields);
 		$response = wp_remote_post(self::API_URL, [
 			'body'  => $fields
 		]);
 		if(is_wp_error($response)){
-			throw new UnexpectedValueException(sprintf(__('Er ging iets fout bij het verzenden van het formulier: %s', Plugin::DOMAIN), $response->get_error_message()));
+			throw new UnexpectedValueException(sprintf(__('Er ging iets fout bij het verzenden van het formulier: %s',  'beestjeskwijt-form'), $response->get_error_message()));
 		}
 		return $this->handle_response($response);
 	}
@@ -114,7 +121,7 @@ class AffiliateLeadsAPI {
 		$http_code = $response['response']['code'];
 		if($http_code != 201){
 			$body = sanitize_text_field($response['body']);
-			throw new UnexpectedValueException(sprintf(__('Onverwacht antwoord: %s', Plugin::DOMAIN), $body));
+			throw new UnexpectedValueException(sprintf(__('Onverwacht antwoord: %s', 'beestjeskwijt-form'), $body));
 		}
 		return true;
 	}

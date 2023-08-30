@@ -1,0 +1,193 @@
+# Copyright (C) 2023 tyCoon Media
+# This file is distributed under the same license as the Beestjeskwijt Formulier package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Beestjeskwijt Formulier 0.1.0\n"
+"Report-Msgid-Bugs-To: "
+"https://wordpress.org/support/plugin/beestjeskwijt-form\n"
+"POT-Creation-Date: 2023-08-03 14:30:49+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2023-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: src/API/AffiliateLeadsAPI.php:86
+msgid "Het %s veld ontbreekt"
+msgstr ""
+
+#: src/API/AffiliateLeadsAPI.php:96
+msgid "Het verplichte veld %s bevat een ongeldige waarde"
+msgstr ""
+
+#: src/API/AffiliateLeadsAPI.php:108
+msgid "Er ging iets fout bij het verzenden van het formulier: %s"
+msgstr ""
+
+#: src/API/AffiliateLeadsAPI.php:117
+msgid "Onverwacht antwoord: %s"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:5
+msgid "Uw aanvraag is ontvangen!"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:13
+msgid "Van welk ongedierte heb je last?"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:15
+msgid "Bedwantsen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:16
+msgid "Beestjes onbekend"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:17
+msgid "Boktor"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:18
+msgid "Duiven"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:19
+msgid "Houtworm"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:20
+msgid "Kakkerlakken"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:21
+msgid "Kevers"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:22
+msgid "Mieren"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:23
+msgid "Mollen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:24
+msgid "Motmuggen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:25
+msgid "Motten"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:26
+msgid "Muggen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:27
+msgid "Muizen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:28
+msgid "Papiervisjes"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:29
+msgid "Ratten"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:30
+msgid "Rioolvliegjes"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:31
+msgid "Spinnen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:32
+msgid "Vliegen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:33
+msgid "Vlooien"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:34
+#: templates/Shortcodes/FormShortcode.php:35
+msgid "Wespen"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:36
+msgid "Zilvervisjes"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:37
+msgid "Zwam"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:41
+#: templates/Shortcodes/FormShortcode.php:42
+msgid "Wat is je vraag/probleem?"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:45
+#: templates/Shortcodes/FormShortcode.php:46
+msgid "Straatnaam"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:49
+#: templates/Shortcodes/FormShortcode.php:50
+msgid "Huisnummer"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:53
+#: templates/Shortcodes/FormShortcode.php:54
+msgid "Postcode (0000XX)"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:57
+#: templates/Shortcodes/FormShortcode.php:58
+msgid "E-mailadres"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:61
+#: templates/Shortcodes/FormShortcode.php:62
+msgid "Telefoonnummer"
+msgstr ""
+
+#: templates/Shortcodes/FormShortcode.php:64
+msgid "Verzenden &raquo;"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Beestjeskwijt Formulier"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "PLUGIN SITE HERE"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "Formulier voor Beestjeskwijt affiliate"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "tyCoon Media"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://tycoonmedia.net"
+msgstr ""

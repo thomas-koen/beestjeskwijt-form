@@ -10,7 +10,7 @@
         }
     ],
     "autoload": {
-      "psr-4": {"Beestjeskwijt\\": "src/"}
+      "psr-4": {"Beestjeskwijt\\": "src/php/"}
     },
     "require": {}
 }

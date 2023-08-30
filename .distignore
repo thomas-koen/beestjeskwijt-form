@@ -6,10 +6,12 @@
 .eslintignore
 .eslintrc
 .git
+.github
 .gitignore
 .gitlab-ci.yml
 .travis.yml
 .DS_Store
+.idea
 Thumbs.db
 behat.yml
 bitbucket-pipelines.yml
@@ -34,7 +36,6 @@ webpack.config.js
 wp-cli.local.yml
 yarn.lock
 tests
-vendor
 node_modules
 *.sql
 *.tar.gz
